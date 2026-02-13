@@ -21,8 +21,6 @@ def connect_to_test():
 
 '''
 
-
-
 def getGlobalAchievementStats(gameID, formatType):
     url = 'http://api.steampowered.com/ISteamUserStats/GetGlobalAchievementPercentagesForApp/v002/?gameid=' + gameID + '&format=' + formatType
 
@@ -46,15 +44,16 @@ def getPersonalAchievementStats(steamKey, gameID):
         print(f"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nUnable to connect for some reason.                       \nCheck connectToSteam.py: getPersonalAchievementStats.    \n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
 
 
-#stsStats = getGlobalAchievementStats('646570', 'json')
+stats = getGlobalAchievementStats('240720', 'json')
 
-load_dotenv()
-localStsStats = getPersonalAchievementStats(str(os.getenv("STEAM_KEY")), '8930')
+#load_dotenv()
+#localStsStats = getPersonalAchievementStats(str(os.getenv("STEAM_KEY")), '8930')
 
+print(stats)
 
-
+'''
 if localStsStats is not None:
     print(localStsStats)
 
-
+'''
     
